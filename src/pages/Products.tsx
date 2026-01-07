@@ -406,7 +406,7 @@ const Products = () => {
                                   1 LB/100 GRAMS/200 GRAMS
                                 </p>
                               )}
-                              <div className="flex gap-2">
+                              <div className="flex flex-col xs:flex-row gap-1.5">
                                 <Button 
                                   onClick={(e) => {
                                     e.stopPropagation();
@@ -428,10 +428,10 @@ const Products = () => {
                                   }}
                                   size="sm"
                                   variant="outline"
-                                  className="flex-1"
+                                  className="flex-1 text-xs px-2 min-w-0"
                                 >
-                                  <ShoppingCart className="h-3 w-3 mr-1" />
-                                  Add
+                                  <ShoppingCart className="h-3 w-3 shrink-0" />
+                                  <span className="truncate">Add</span>
                                 </Button>
                                 <Button 
                                   onClick={(e) => {
@@ -439,9 +439,9 @@ const Products = () => {
                                     setEnquiryProduct(varietyName);
                                   }}
                                   size="sm"
-                                  className="flex-1"
+                                  className="flex-1 text-xs px-2 min-w-0"
                                 >
-                                  Enquire
+                                  <span className="truncate">Enquire</span>
                                 </Button>
                               </div>
                             </CardContent>
