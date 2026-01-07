@@ -6,17 +6,17 @@ import teamImage from "@/assets/team-image.jpg";
 const Team = () => {
   const teamMembers = [
     {
-      name: "Krishna Mohan",
+      name: "Madhava Kondamadugula",
       role: "Managing Director",
       description: "Over 15 years of experience in agricultural exports and business development",
-      phone: "+91 9848938837",
+      phones: ["+91 9848938837", "+91 9948547000"],
       email: "khagrofoods@gmail.com"
     },
     {
-      name: "Hari Prasad",
-      role: "Operations Head",
-      description: "Expert in supply chain management and quality control processes",
-      phone: "+91 9948547000",
+      name: "M.S.Reddy",
+      role: "Export Manager",
+      description: "Over 20 years of experience in export management and expert in supply chain and quality control process",
+      phones: ["+91 9052932845"],
       email: "khagroexporters@gmail.com"
     }
   ];
@@ -129,10 +129,12 @@ const Team = () => {
                       <p className="text-primary font-semibold mb-3">{member.role}</p>
                       <p className="text-foreground/80 mb-4">{member.description}</p>
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-foreground/70">
-                          <Phone className="w-4 h-4" />
-                          <span>{member.phone}</span>
-                        </div>
+                        {member.phones.map((phone, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-foreground/70">
+                            <Phone className="w-4 h-4" />
+                            <span>{phone}</span>
+                          </div>
+                        ))}
                         <div className="flex items-center gap-2 text-foreground/70">
                           <Mail className="w-4 h-4" />
                           <span>{member.email}</span>
