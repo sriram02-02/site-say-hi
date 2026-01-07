@@ -428,9 +428,9 @@ const Products = () => {
                                   }}
                                   size="sm"
                                   variant="outline"
-                                  className="flex-1 text-xs px-2 min-w-0"
+                                  className="flex-1 text-sm px-3 min-w-0 py-2"
                                 >
-                                  <ShoppingCart className="h-3 w-3 shrink-0" />
+                                  <ShoppingCart className="h-4 w-4 shrink-0" />
                                   <span className="truncate">Add</span>
                                 </Button>
                                 <Button 
@@ -439,7 +439,7 @@ const Products = () => {
                                     setEnquiryProduct(varietyName);
                                   }}
                                   size="sm"
-                                  className="flex-1 text-xs px-2 min-w-0"
+                                  className="flex-1 text-sm px-3 min-w-0 py-2"
                                 >
                                   <span className="truncate">Enquire</span>
                                 </Button>
