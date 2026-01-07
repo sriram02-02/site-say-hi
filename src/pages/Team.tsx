@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Users, Building2, Warehouse, Truck, Award, Target, MapPin, Phone, Mail } from "lucide-react";
 import teamImage from "@/assets/team-image.jpg";
+import madhavaImage from "@/assets/madhava.jpg";
 
 const Team = () => {
   const teamMembers = [
@@ -10,14 +11,16 @@ const Team = () => {
       role: "Managing Director",
       description: "Over 15 years of experience in agricultural exports and business development",
       phones: ["+91 9848938837", "+91 9948547000"],
-      email: "khagrofoods@gmail.com"
+      email: "khagrofoods@gmail.com",
+      image: madhavaImage
     },
     {
       name: "M.S.Reddy",
       role: "Export Manager",
       description: "Over 20 years of experience in export management and expert in supply chain and quality control process",
       phones: ["+91 9052932845"],
-      email: "khagroexporters@gmail.com"
+      email: "khagroexporters@gmail.com",
+      image: null
     }
   ];
 
@@ -121,9 +124,15 @@ const Team = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="flex items-start gap-6">
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30 flex-shrink-0">
-                      <Users className="w-10 h-10 text-primary" />
-                    </div>
+                    {member.image ? (
+                      <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-primary/30 flex-shrink-0">
+                        <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                      </div>
+                    ) : (
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30 flex-shrink-0">
+                        <Users className="w-10 h-10 text-primary" />
+                      </div>
+                    )}
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>
                       <p className="text-primary font-semibold mb-3">{member.role}</p>
