@@ -266,7 +266,7 @@ const Team = () => {
                 { value: "10+", label: "Years Experience" },
                 { value: "50+", label: "Product Varieties" },
                 { value: "10+", label: "Export Countries" },
-                { value: "500+", label: "Happy Clients" }
+                { value: "10+", label: "Happy Clients" }
               ].map((stat, index) => (
                 <div 
                   key={stat.label}
