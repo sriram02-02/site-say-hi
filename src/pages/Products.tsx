@@ -235,7 +235,7 @@ const Products = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <Card 
-                    className={`relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 ${bgColors[index % bgColors.length]}`}
+                    className={`relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 ${bgColors[index % bgColors.length]} h-full flex flex-col`}
                   >
                     {/* Animated gradient border */}
                     <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${gradients[index % gradients.length]} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm scale-105`} />
@@ -278,8 +278,8 @@ const Products = () => {
                     </div>
                     
                     {/* Content */}
-                    <CardContent className="p-6">
-                      <p className="text-foreground/70 mb-6 leading-relaxed">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <p className="text-foreground/70 mb-6 leading-relaxed min-h-[48px] line-clamp-2">
                         {product.description}
                       </p>
                       
