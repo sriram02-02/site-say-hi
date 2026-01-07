@@ -62,17 +62,18 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group min-w-0">
             <motion.img
               src={logo}
               alt="Sri Chakra Logo"
-              className="w-10 h-10 rounded-lg object-cover"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-cover flex-shrink-0"
               loading="lazy"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.5 }}
             />
-            <span className="font-bold text-lg text-primary group-hover:text-primary/80 transition-colors">
-              KH AGRO STOCKIST & EXPORTERS PVT. LTD.
+            <span className="font-bold text-xs sm:text-sm md:text-lg text-primary group-hover:text-primary/80 transition-colors truncate">
+              <span className="hidden sm:inline">KH AGRO STOCKIST & EXPORTERS PVT. LTD.</span>
+              <span className="sm:hidden">KH AGRO</span>
             </span>
           </Link>
 

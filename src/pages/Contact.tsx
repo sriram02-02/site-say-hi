@@ -57,19 +57,19 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <div className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+      <div className="pt-20 sm:pt-24 pb-12 sm:pb-16">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Get In Touch</h1>
+            <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
               Have questions about our products? We're here to help you with all your import/export needs.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
-            <div className="bg-card border rounded-lg p-8 shadow-sm">
-              <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
+            <div className="bg-card border rounded-lg p-4 sm:p-6 md:p-8 shadow-sm">
+              <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Send us a Message</h2>
               <Form {...form}>
                 <form className="space-y-6">
                   <FormField
@@ -176,74 +176,74 @@ Please contact me for further details.`;
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-6">
-              <div className="bg-card border rounded-lg p-8 shadow-sm">
-                <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-card border rounded-lg p-4 sm:p-6 md:p-8 shadow-sm">
+                <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Contact Information</h2>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-blue-600" />
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-foreground mb-1">Email</p>
-                      <p className="text-sm text-muted-foreground break-all">{contactInfo.email}</p>
+                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Email</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground break-all">{contactInfo.email}</p>
                     </div>
                     <Button
                       size="sm"
                       variant="outline"
                       onClick={() => copyToClipboard(contactInfo.email)}
-                      className="flex-shrink-0"
+                      className="flex-shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3 p-0"
                     >
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-green-600" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-foreground mb-1">Phone</p>
-                      <p className="text-sm text-muted-foreground">{contactInfo.phone}</p>
+                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Phone</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.phone}</p>
                     </div>
                     <Button
                       size="sm"
                       variant="outline"
                       onClick={() => copyToClipboard(contactInfo.phone)}
-                      className="flex-shrink-0"
+                      className="flex-shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3 p-0"
                     >
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-orange-600" />
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-foreground mb-1">Address</p>
-                      <p className="text-sm text-muted-foreground">{contactInfo.address}</p>
+                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Address</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.address}</p>
                     </div>
                     <Button
                       size="sm"
                       variant="outline"
                       onClick={() => copyToClipboard(contactInfo.address)}
-                      className="flex-shrink-0"
+                      className="flex-shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3 p-0"
                     >
-                      <Copy className="w-4 h-4" />
+                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
                     </Button>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-blue-50 border border-blue-100 rounded-lg p-6">
-                <h3 className="font-semibold text-foreground mb-2">Business Hours</h3>
-                <p className="text-sm text-muted-foreground">
+              <div className="bg-blue-50 border border-blue-100 rounded-lg p-4 sm:p-6">
+                <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Business Hours</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   Monday - Saturday: 9:00 AM - 6:00 PM<br />
                   Sunday: Closed
                 </p>
-                <p className="text-sm text-muted-foreground mt-4">
+                <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
                   We typically respond within 24 hours during business days.
                 </p>
               </div>
