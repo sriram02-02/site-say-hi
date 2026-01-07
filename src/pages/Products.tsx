@@ -212,70 +212,124 @@ const Products = () => {
             {products.map((product, index) => {
               const Icon = product.icon;
               const gradients = [
-                "from-orange-500/20 to-red-500/10",
-                "from-amber-500/20 to-yellow-500/10",
-                "from-red-500/20 to-orange-500/10",
-                "from-purple-500/20 to-pink-500/10",
-                "from-emerald-500/20 to-teal-500/10"
+                "from-orange-600 via-red-500 to-amber-500",
+                "from-amber-500 via-yellow-500 to-orange-400",
+                "from-red-600 via-rose-500 to-pink-500",
+                "from-violet-600 via-purple-500 to-fuchsia-500",
+                "from-emerald-600 via-teal-500 to-cyan-500"
               ];
-              const iconBgs = [
-                "from-orange-500 to-red-500",
-                "from-amber-500 to-yellow-500",
-                "from-red-500 to-orange-500",
-                "from-purple-500 to-pink-500",
-                "from-emerald-500 to-teal-500"
+              const bgColors = [
+                "bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30",
+                "bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/30 dark:to-yellow-950/30",
+                "bg-gradient-to-br from-red-50 to-rose-50 dark:from-red-950/30 dark:to-rose-950/30",
+                "bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950/30 dark:to-purple-950/30",
+                "bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/30 dark:to-teal-950/30"
               ];
+              // Get first 4 product images for preview
+              const previewImages = product.varieties.slice(0, 4).map((v: any) => v.image);
+              
               return (
-                <Card 
+                <div
                   key={product.title}
-                  className="relative group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 hover:border-primary/50 overflow-hidden bg-card/95 backdrop-blur-md"
+                  className="group relative animate-fade-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {/* Gradient overlay */}
-                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradients[index % gradients.length]} opacity-50 group-hover:opacity-80 transition-opacity duration-500`} />
-                  
-                  {/* Decorative corner accent */}
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  <CardHeader className="relative p-8">
-                    {/* Enhanced icon container */}
-                    <div className={`mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br ${iconBgs[index % iconBgs.length]} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
-                      <Icon className="w-10 h-10 text-white" />
+                  <Card 
+                    className={`relative overflow-hidden border-0 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 ${bgColors[index % bgColors.length]}`}
+                  >
+                    {/* Animated gradient border */}
+                    <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${gradients[index % gradients.length]} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm scale-105`} />
+                    
+                    {/* Image Preview Grid */}
+                    <div className="relative h-48 overflow-hidden">
+                      <div className="grid grid-cols-2 grid-rows-2 h-full">
+                        {previewImages.map((img: string, imgIndex: number) => (
+                          <div 
+                            key={imgIndex}
+                            className="relative overflow-hidden"
+                          >
+                            <img 
+                              src={img} 
+                              alt=""
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      {/* Overlay gradient */}
+                      <div className={`absolute inset-0 bg-gradient-to-t ${gradients[index % gradients.length]} opacity-60 mix-blend-multiply`} />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      
+                      {/* Category Icon Badge */}
+                      <div className={`absolute top-4 left-4 w-14 h-14 rounded-2xl bg-gradient-to-br ${gradients[index % gradients.length]} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                        <Icon className="w-7 h-7 text-white" />
+                      </div>
+                      
+                      {/* Variety count badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-white/90 dark:bg-black/70 text-foreground shadow-lg backdrop-blur-sm">
+                          {product.varieties.length} Items
+                        </span>
+                      </div>
+                      
+                      {/* Title on image */}
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
+                          {product.title}
+                        </h3>
+                      </div>
                     </div>
                     
-                    <CardTitle className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-                      {product.title}
-                    </CardTitle>
-                    <CardDescription className="text-base text-foreground/70 mb-8 leading-relaxed">
-                      {product.description}
-                    </CardDescription>
-                    
-                    {/* Variety count badge */}
-                    <div className="mb-6">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-primary/10 text-primary border border-primary/20">
-                        {product.varieties.length} Varieties Available
-                      </span>
-                    </div>
-                    
-                    <div className="flex gap-3">
-                      <Button 
-                        onClick={() => setEnquiryProduct(product.title)}
-                        className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/20"
-                        size="lg"
-                      >
-                        Enquire Now
-                      </Button>
-                      <Button 
-                        onClick={() => setSelectedProductTitle(product.title)}
-                        variant="outline"
-                        className="flex-1 border-2 hover:bg-primary/5"
-                        size="lg"
-                      >
-                        View All
-                      </Button>
-                    </div>
-                  </CardHeader>
-                </Card>
+                    {/* Content */}
+                    <CardContent className="p-6">
+                      <p className="text-foreground/70 mb-6 leading-relaxed">
+                        {product.description}
+                      </p>
+                      
+                      {/* Sample products preview */}
+                      <div className="flex items-center gap-2 mb-6">
+                        <div className="flex -space-x-3">
+                          {previewImages.slice(0, 3).map((img: string, i: number) => (
+                            <div 
+                              key={i}
+                              className="w-10 h-10 rounded-full border-2 border-card overflow-hidden shadow-md"
+                            >
+                              <img src={img} alt="" className="w-full h-full object-cover" />
+                            </div>
+                          ))}
+                          {product.varieties.length > 3 && (
+                            <div className="w-10 h-10 rounded-full border-2 border-card bg-primary/10 flex items-center justify-center text-xs font-bold text-primary shadow-md">
+                              +{product.varieties.length - 3}
+                            </div>
+                          )}
+                        </div>
+                        <span className="text-sm text-muted-foreground ml-2">
+                          Premium varieties
+                        </span>
+                      </div>
+                      
+                      {/* Action Buttons */}
+                      <div className="flex gap-3">
+                        <Button 
+                          onClick={() => setSelectedProductTitle(product.title)}
+                          className={`flex-1 bg-gradient-to-r ${gradients[index % gradients.length]} hover:opacity-90 text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]`}
+                          size="lg"
+                        >
+                          Explore All
+                        </Button>
+                        <Button 
+                          onClick={() => setEnquiryProduct(product.title)}
+                          variant="outline"
+                          className="flex-1 border-2 hover:bg-primary/5 transition-all duration-300"
+                          size="lg"
+                        >
+                          Enquire
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               );
             })}
           </div>
