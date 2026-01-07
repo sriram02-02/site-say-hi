@@ -180,7 +180,7 @@ const Products = () => {
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url('/background.jpg')" }}
         />
-        <div className="absolute inset-0 bg-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-primary/10" />
       </div>
 
       {/* Content */}
@@ -188,44 +188,88 @@ const Products = () => {
         <Navigation />
         <div className="pt-24 pb-20">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              Our Premium Products
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Carefully curated selection of finest products sourced from trusted suppliers worldwide
-            </p>
+          {/* Enhanced Hero Section */}
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="relative bg-card/90 backdrop-blur-md rounded-3xl p-12 md:p-16 border-2 border-primary/20 shadow-2xl">
+              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-tl-3xl" />
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/20 to-transparent rounded-br-3xl" />
+              
+              <div className="inline-block px-6 py-2 bg-gradient-to-r from-primary/20 to-accent/20 text-primary rounded-full text-sm font-bold mb-6 border border-primary/30">
+                PREMIUM QUALITY PRODUCTS
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent leading-tight">
+                Our Premium Products
+              </h1>
+              <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6 rounded-full" />
+              <p className="text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+                Carefully curated selection of finest products sourced from trusted suppliers worldwide
+              </p>
+            </div>
           </div>
+
+          {/* Product Categories Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => {
               const Icon = product.icon;
+              const gradients = [
+                "from-orange-500/20 to-red-500/10",
+                "from-amber-500/20 to-yellow-500/10",
+                "from-red-500/20 to-orange-500/10",
+                "from-purple-500/20 to-pink-500/10",
+                "from-emerald-500/20 to-teal-500/10"
+              ];
+              const iconBgs = [
+                "from-orange-500 to-red-500",
+                "from-amber-500 to-yellow-500",
+                "from-red-500 to-orange-500",
+                "from-purple-500 to-pink-500",
+                "from-emerald-500 to-teal-500"
+              ];
               return (
                 <Card 
                   key={product.title}
-                  className="relative group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 overflow-hidden"
+                  className="relative group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 hover:border-primary/50 overflow-hidden bg-card/95 backdrop-blur-md"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <CardHeader className="relative">
-                    <div className="mb-4 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-7 h-7 text-primary" />
+                  {/* Gradient overlay */}
+                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${gradients[index % gradients.length]} opacity-50 group-hover:opacity-80 transition-opacity duration-500`} />
+                  
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  <CardHeader className="relative p-8">
+                    {/* Enhanced icon container */}
+                    <div className={`mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br ${iconBgs[index % iconBgs.length]} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg`}>
+                      <Icon className="w-10 h-10 text-white" />
                     </div>
-                    <CardTitle className="text-2xl">
+                    
+                    <CardTitle className="text-2xl md:text-3xl font-bold text-foreground mb-3">
                       {product.title}
                     </CardTitle>
-                    <CardDescription className="text-base mt-2 mb-6">
+                    <CardDescription className="text-base text-foreground/70 mb-8 leading-relaxed">
                       {product.description}
                     </CardDescription>
+                    
+                    {/* Variety count badge */}
+                    <div className="mb-6">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-primary/10 text-primary border border-primary/20">
+                        {product.varieties.length} Varieties Available
+                      </span>
+                    </div>
+                    
                     <div className="flex gap-3">
                       <Button 
                         onClick={() => setEnquiryProduct(product.title)}
-                        className="flex-1"
+                        className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg shadow-primary/20"
+                        size="lg"
                       >
                         Enquire Now
                       </Button>
                       <Button 
                         onClick={() => setSelectedProductTitle(product.title)}
                         variant="outline"
-                        className="flex-1"
+                        className="flex-1 border-2 hover:bg-primary/5"
+                        size="lg"
                       >
                         View All
                       </Button>
@@ -237,34 +281,45 @@ const Products = () => {
           </div>
 
           <Dialog open={selectedProductTitle !== null} onOpenChange={(open) => !open && setSelectedProductTitle(null)}>
-            <DialogContent className="max-w-5xl max-h-[85vh] overflow-y-auto">
+            <DialogContent className="max-w-5xl max-h-[85vh] overflow-y-auto bg-gradient-to-br from-card to-card/95 border-2 border-primary/20">
               {(() => {
                 const current = products.find((p) => p.title === selectedProductTitle);
                 if (!current) return null;
                 const Icon = current.icon;
+                const productIndex = products.findIndex((p) => p.title === selectedProductTitle);
+                const iconBgs = [
+                  "from-orange-500 to-red-500",
+                  "from-amber-500 to-yellow-500",
+                  "from-red-500 to-orange-500",
+                  "from-purple-500 to-pink-500",
+                  "from-emerald-500 to-teal-500"
+                ];
                 return (
                   <>
-                    <DialogHeader>
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <Icon className="w-6 h-6 text-primary" />
+                    <DialogHeader className="pb-4 border-b border-primary/10">
+                      <div className="flex items-center gap-4">
+                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${iconBgs[productIndex % iconBgs.length]} flex items-center justify-center shadow-lg`}>
+                          <Icon className="w-7 h-7 text-white" />
                         </div>
-                        <DialogTitle className="text-2xl">{current.title} Varieties</DialogTitle>
+                        <div>
+                          <DialogTitle className="text-2xl md:text-3xl font-bold">{current.title} Varieties</DialogTitle>
+                          <p className="text-sm text-muted-foreground mt-1">{current.varieties.length} products available</p>
+                        </div>
                       </div>
                       <DialogDescription className="sr-only">
                         List of product varieties for {current.title}
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
                       {current.varieties.map((variety, vIndex) => {
                         const varietyName = typeof variety === 'string' ? variety : (variety as any).name;
                         const varietyImage = typeof variety === 'object' && (variety as any).image ? (variety as any).image : null;
                         return (
                           <Card 
                             key={varietyName} 
-                            className="group overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border hover:border-primary/50"
+                            className="group overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border-2 hover:border-primary/50 bg-card/80"
                           >
-                            <div className="aspect-square bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center relative overflow-hidden">
+                            <div className="aspect-square bg-gradient-to-br from-muted to-muted/30 flex items-center justify-center relative overflow-hidden">
                               {varietyImage ? (
                                 <>
                                   <img 
@@ -273,12 +328,12 @@ const Products = () => {
                                     loading="lazy"
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                   />
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </>
                               ) : (
                                 <>
-                                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                                  <Icon className="w-12 h-12 text-muted-foreground/30 group-hover:scale-110 transition-transform" />
+                                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                  <Icon className="w-16 h-16 text-muted-foreground/20 group-hover:scale-110 group-hover:text-primary/30 transition-all" />
                                 </>
                               )}
                             </div>
