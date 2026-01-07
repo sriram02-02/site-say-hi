@@ -50,7 +50,8 @@ const Team = () => {
     { year: "2015", title: "APEDA, FIEO & Spices Board", description: "Registered with APEDA, FIEO and Spices Board" },
     { year: "2021", title: "ISO Certified", description: "Achieved ISO 9001:2015 certification" },
     { year: "2021", title: "Global Expansion", description: "Expanded exports to Canada market" },
-    { year: "2022", title: "FSSAI Certified", description: "Achieved food safety certification" }
+    { year: "2022", title: "FSSAI Certified", description: "Achieved food safety certification" },
+    { year: "2024", title: "US Exports with FDA", description: "Completed FDA process and started exports to USA" }
   ];
 
   return (
