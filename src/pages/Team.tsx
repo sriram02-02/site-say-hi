@@ -46,7 +46,8 @@ const Team = () => {
   ];
 
   const milestones = [
-    { year: "2018", title: "Company Founded", description: "Started operations in Guntur, Andhra Pradesh" },
+    { year: "2014", title: "Company Founded", description: "Started operations in Guntur, Andhra Pradesh" },
+    { year: "2015", title: "APEDA, FIEO & Spices Board", description: "Registered with APEDA, FIEO and Spices Board" },
     { year: "2019", title: "FSSAI Certified", description: "Achieved food safety certification" },
     { year: "2020", title: "Export License", description: "Obtained APEDA registration for exports" },
     { year: "2021", title: "ISO Certified", description: "Achieved ISO 9001:2015 certification" },
@@ -262,7 +263,7 @@ const Team = () => {
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: "5+", label: "Years Experience" },
+                { value: "10+", label: "Years Experience" },
                 { value: "50+", label: "Product Varieties" },
                 { value: "10+", label: "Export Countries" },
                 { value: "500+", label: "Happy Clients" }
