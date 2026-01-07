@@ -261,10 +261,6 @@ const Products = () => {
                       <div className={`absolute inset-0 bg-gradient-to-t ${gradients[index % gradients.length]} opacity-60 mix-blend-multiply`} />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       
-                      {/* Category Icon Badge */}
-                      <div className={`absolute top-4 left-4 w-14 h-14 rounded-2xl bg-gradient-to-br ${gradients[index % gradients.length]} flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                        <Icon className="w-7 h-7 text-white" />
-                      </div>
                       
                       {/* Variety count badge */}
                       <div className="absolute top-4 right-4">
