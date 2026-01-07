@@ -64,6 +64,12 @@ export const Navigation = () => {
               <Link to="/products">
                 <Button variant="ghost">Products</Button>
               </Link>
+              <Link to="/team">
+                <Button variant="ghost">Team</Button>
+              </Link>
+              <Link to="/blog">
+                <Button variant="ghost">Blog</Button>
+              </Link>
               <Link to="/contact">
                 <Button className="bg-accent hover:bg-accent/90">Contact</Button>
               </Link>
@@ -121,6 +127,12 @@ export const Navigation = () => {
           </Link>
           <Link to="/products" onClick={() => setMobileOpen(false)}>
             <Button variant="ghost" className="w-full justify-start py-3">Products</Button>
+          </Link>
+          <Link to="/team" onClick={() => setMobileOpen(false)}>
+            <Button variant="ghost" className="w-full justify-start py-3">Team</Button>
+          </Link>
+          <Link to="/blog" onClick={() => setMobileOpen(false)}>
+            <Button variant="ghost" className="w-full justify-start py-3">Blog</Button>
           </Link>
           <Link to="/contact" onClick={() => setMobileOpen(false)}>
             <Button className="w-full bg-accent hover:bg-accent/90 py-3">Contact</Button>
