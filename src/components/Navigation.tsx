@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/srichakra.jpg";
 import { Cart } from "@/components/Cart";
 
 export const Navigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
 
@@ -14,77 +16,108 @@ export const Navigation = () => {
       if (e.key === "Escape") setMobileOpen(false);
     };
     const onResize = () => {
-      // close mobile menu when switching to desktop
       if (window.innerWidth >= 768) setMobileOpen(false);
+    };
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20);
     };
 
     document.addEventListener("keydown", onKey);
     window.addEventListener("resize", onResize);
+    window.addEventListener("scroll", onScroll);
 
-    // lock body scroll when menu open
     document.body.style.overflow = mobileOpen ? "hidden" : "";
 
     return () => {
       document.removeEventListener("keydown", onKey);
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onScroll);
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
-  // New: ensure each navigation opens at top of new page and close mobile menu
   useEffect(() => {
-    // scroll to top of new route and ensure mobile menu is closed
     window.scrollTo({ top: 0, behavior: "auto" });
     setMobileOpen(false);
   }, [location.pathname]);
 
+  const navItems = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/products", label: "Products" },
+    { to: "/team", label: "Team" },
+    { to: "/blog", label: "Blog" },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+    <motion.nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? "bg-background/98 backdrop-blur-lg shadow-md border-b border-border" 
+          : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border"
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            {/* lazy-load logo for mobile perf */}
-            <img
+          <Link to="/" className="flex items-center gap-2 group">
+            <motion.img
               src={logo}
               alt="Sri Chakra Logo"
               className="w-10 h-10 rounded-lg object-cover"
               loading="lazy"
+              whileHover={{ rotate: 360 }}
+              transition={{ duration: 0.5 }}
             />
-            <span className="font-bold text-lg text-primary">KH AGRO STOCKIST & EXPORTERS PVT. LTD.</span>
+            <span className="font-bold text-lg text-primary group-hover:text-primary/80 transition-colors">
+              KH AGRO STOCKIST & EXPORTERS PVT. LTD.
+            </span>
           </Link>
 
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-1">
-              <Link to="/">
-                <Button variant="ghost">Home</Button>
-              </Link>
-              <Link to="/about">
-                <Button variant="ghost">About</Button>
-              </Link>
-              <Link to="/products">
-                <Button variant="ghost">Products</Button>
-              </Link>
-              <Link to="/team">
-                <Button variant="ghost">Team</Button>
-              </Link>
-              <Link to="/blog">
-                <Button variant="ghost">Blog</Button>
-              </Link>
+              {navItems.map((item) => (
+                <Link key={item.to} to={item.to}>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button 
+                      variant="ghost"
+                      className={`relative overflow-hidden ${
+                        location.pathname === item.to ? "text-primary font-semibold" : ""
+                      }`}
+                    >
+                      {item.label}
+                      {location.pathname === item.to && (
+                        <motion.div 
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                          layoutId="activeTab"
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        />
+                      )}
+                    </Button>
+                  </motion.div>
+                </Link>
+              ))}
               <Link to="/contact">
-                <Button className="bg-accent hover:bg-accent/90">Contact</Button>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button className="bg-accent hover:bg-accent/90 shadow-lg shadow-accent/20">
+                    Contact
+                  </Button>
+                </motion.div>
               </Link>
             </div>
 
             {/* Mobile hamburger toggle */}
-            <button
+            <motion.button
               type="button"
               aria-controls="mobile-navigation"
               aria-expanded={mobileOpen}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               onClick={() => setMobileOpen((s) => !s)}
               className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-sm hover:bg-muted/60 focus:outline-none focus:ring-2 focus:ring-ring"
+              whileTap={{ scale: 0.9 }}
             >
-              {/* simple animated icon */}
               <span className="sr-only">{mobileOpen ? "Close navigation" : "Open navigation"}</span>
               <svg
                 className="w-6 h-6"
@@ -102,7 +135,7 @@ export const Navigation = () => {
                   <path d="M3 12h18M3 6h18M3 18h18" />
                 )}
               </svg>
-            </button>
+            </motion.button>
 
             <Cart />
           </div>
@@ -110,35 +143,50 @@ export const Navigation = () => {
       </div>
 
       {/* Mobile sliding panel */}
-      <div
-        id="mobile-navigation"
-        ref={menuRef}
-        className={`md:hidden transition-all duration-200 ease-in-out overflow-hidden bg-background/95 border-t border-border ${
-          mobileOpen ? "max-h-[400px]" : "max-h-0"
-        }`}
-        aria-hidden={!mobileOpen}
-      >
-        <div className="px-4 py-3 space-y-2">
-          <Link to="/" onClick={() => setMobileOpen(false)}>
-            <Button variant="ghost" className="w-full justify-start py-3">Home</Button>
-          </Link>
-          <Link to="/about" onClick={() => setMobileOpen(false)}>
-            <Button variant="ghost" className="w-full justify-start py-3">About</Button>
-          </Link>
-          <Link to="/products" onClick={() => setMobileOpen(false)}>
-            <Button variant="ghost" className="w-full justify-start py-3">Products</Button>
-          </Link>
-          <Link to="/team" onClick={() => setMobileOpen(false)}>
-            <Button variant="ghost" className="w-full justify-start py-3">Team</Button>
-          </Link>
-          <Link to="/blog" onClick={() => setMobileOpen(false)}>
-            <Button variant="ghost" className="w-full justify-start py-3">Blog</Button>
-          </Link>
-          <Link to="/contact" onClick={() => setMobileOpen(false)}>
-            <Button className="w-full bg-accent hover:bg-accent/90 py-3">Contact</Button>
-          </Link>
-        </div>
-      </div>
-    </nav>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="mobile-navigation"
+            ref={menuRef}
+            className="md:hidden bg-background/98 backdrop-blur-lg border-t border-border"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="px-4 py-3 space-y-2">
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.to}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <Link to={item.to} onClick={() => setMobileOpen(false)}>
+                    <Button 
+                      variant="ghost" 
+                      className={`w-full justify-start py-3 ${
+                        location.pathname === item.to ? "text-primary font-semibold bg-primary/5" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </Button>
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.05 }}
+              >
+                <Link to="/contact" onClick={() => setMobileOpen(false)}>
+                  <Button className="w-full bg-accent hover:bg-accent/90 py-3">Contact</Button>
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
