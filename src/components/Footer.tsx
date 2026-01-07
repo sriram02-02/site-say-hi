@@ -15,10 +15,22 @@ export const Footer = () => {
               Your trusted partner for premium quality agricultural exports including rice, pulses, and authentic spices.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Facebook">
+              <a 
+                href="https://www.facebook.com/khagroexports" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors" 
+                aria-label="Facebook"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Twitter">
+              <a 
+                href="https://twitter.com/khagroexports" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors" 
+                aria-label="Twitter"
+              >
                 <Twitter size={20} />
               </a>
               <a
@@ -30,7 +42,13 @@ export const Footer = () => {
               >
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors" aria-label="Instagram">
+              <a 
+                href="https://www.instagram.com/khagroexports" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors" 
+                aria-label="Instagram"
+              >
                 <Instagram size={20} />
               </a>
             </div>
@@ -48,6 +66,16 @@ export const Footer = () => {
               <li>
                 <Link to="/products" className="text-white/80 hover:text-accent transition-colors">
                   Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/team" className="text-white/80 hover:text-accent transition-colors">
+                  Team & Infrastructure
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-white/80 hover:text-accent transition-colors">
+                  Blog & News
                 </Link>
               </li>
               <li>
