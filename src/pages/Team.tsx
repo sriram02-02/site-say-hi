@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Users, Building2, Warehouse, Truck, Award, Target, MapPin, Phone, Mail } from "lucide-react";
 import teamImage from "@/assets/team-image.jpg";
-import madhavaImage from "@/assets/madhava.jpg";
+import madhavaImage from "@/assets/madhava-enhanced.jpg";
 
 const Team = () => {
   const teamMembers = [
