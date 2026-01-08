@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/srichakra.jpg";
+import logo from "@/assets/sree-nandi-logo.jpeg";
 import { Cart } from "@/components/Cart";
 
 export const Navigation = () => {
@@ -65,7 +65,7 @@ export const Navigation = () => {
           <Link to="/" className="flex items-center gap-2 group min-w-0">
             <motion.img
               src={logo}
-              alt="Sri Chakra Logo"
+              alt="Sree Nandi Logo"
               className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-cover flex-shrink-0"
               loading="lazy"
               whileHover={{ rotate: 360 }}
