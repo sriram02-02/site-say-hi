@@ -8,89 +8,101 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 35% 25%;
+    /* Warm cream/off-white background */
+    --background: 40 30% 98%;
+    --foreground: 25 40% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 35% 25%;
+    /* Cards with subtle warmth */
+    --card: 40 25% 99%;
+    --card-foreground: 25 40% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 35% 25%;
+    --popover: 40 25% 99%;
+    --popover-foreground: 25 40% 20%;
 
-    --primary: 0 50% 40%;
-    --primary-foreground: 0 0% 100%;
+    /* Rich golden amber - inspired by wheat/sunrise */
+    --primary: 38 75% 45%;
+    --primary-foreground: 40 30% 98%;
 
-    --secondary: 0 8% 94%;
-    --secondary-foreground: 0 35% 25%;
+    /* Warm neutral secondary */
+    --secondary: 35 20% 92%;
+    --secondary-foreground: 25 40% 20%;
 
-    --muted: 0 8% 95%;
-    --muted-foreground: 0 15% 50%;
+    /* Subtle warm muted tones */
+    --muted: 35 15% 94%;
+    --muted-foreground: 25 20% 45%;
 
-    --accent: 28 55% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Rich chocolate brown accent - from banner */
+    --accent: 25 60% 35%;
+    --accent-foreground: 40 30% 98%;
 
-    --destructive: 0 65% 50%;
-    --destructive-foreground: 0 0% 100%;
+    /* Deep red for destructive - from chillies */
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 40 30% 98%;
 
-    --border: 0 10% 85%;
-    --input: 0 10% 85%;
-    --ring: 0 50% 40%;
+    /* Warm borders */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 38 75% 45%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar with warm tones */
+    --sidebar-background: 40 20% 97%;
+    --sidebar-foreground: 25 40% 20%;
+    --sidebar-primary: 38 75% 45%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 35 20% 92%;
+    --sidebar-accent-foreground: 25 40% 20%;
+    --sidebar-border: 35 15% 88%;
+    --sidebar-ring: 38 75% 45%;
   }
 
   .dark {
-    --background: 0 30% 18%;
-    --foreground: 0 8% 90%;
+    /* Deep warm brown background */
+    --background: 25 35% 12%;
+    --foreground: 40 20% 92%;
 
-    --card: 0 25% 22%;
-    --card-foreground: 0 8% 90%;
+    /* Dark cards with brown undertones */
+    --card: 25 30% 16%;
+    --card-foreground: 40 20% 92%;
 
-    --popover: 0 25% 22%;
-    --popover-foreground: 0 8% 90%;
+    --popover: 25 30% 16%;
+    --popover-foreground: 40 20% 92%;
 
-    --primary: 0 50% 40%;
-    --primary-foreground: 0 0% 100%;
+    /* Golden amber stays vibrant in dark mode */
+    --primary: 40 80% 50%;
+    --primary-foreground: 25 35% 12%;
 
-    --secondary: 0 25% 28%;
-    --secondary-foreground: 0 8% 90%;
+    /* Muted warm secondary */
+    --secondary: 25 25% 22%;
+    --secondary-foreground: 40 20% 92%;
 
-    --muted: 0 25% 28%;
-    --muted-foreground: 0 12% 60%;
+    /* Dark muted tones */
+    --muted: 25 25% 22%;
+    --muted-foreground: 35 15% 55%;
 
-    --accent: 28 55% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Warm brown accent */
+    --accent: 30 55% 40%;
+    --accent-foreground: 40 20% 95%;
 
-    --destructive: 0 50% 35%;
-    --destructive-foreground: 0 8% 90%;
+    /* Muted red for dark mode */
+    --destructive: 0 55% 40%;
+    --destructive-foreground: 40 20% 92%;
 
-    --border: 0 20% 30%;
-    --input: 0 20% 30%;
-    --ring: 0 50% 40%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark warm borders */
+    --border: 25 20% 25%;
+    --input: 25 20% 25%;
+    --ring: 40 80% 50%;
+
+    /* Dark sidebar */
+    --sidebar-background: 25 35% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 40 80% 50%;
+    --sidebar-primary-foreground: 25 35% 12%;
+    --sidebar-accent: 25 25% 18%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 25 20% 20%;
+    --sidebar-ring: 40 80% 50%;
   }
 }
 
