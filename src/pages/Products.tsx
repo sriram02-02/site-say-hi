@@ -173,39 +173,27 @@ const Products = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background relative overflow-x-hidden">
-      {/* Background */}
-      <div className="fixed inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed opacity-30"
-          style={{ backgroundImage: "url('/background.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-background" />
-      </div>
-
+    <div className="min-h-screen bg-background">
       {/* Content */}
-      <div className="relative z-10">
+      <div className="relative">
         <Navigation />
-        <div className="pt-32 sm:pt-40 pb-24">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-          {/* Refined Hero Section */}
-          <div className="text-center mb-20 sm:mb-28 animate-fade-in">
-            <span className="inline-block px-4 py-1.5 text-primary text-xs sm:text-sm font-medium tracking-[0.2em] uppercase mb-6 sm:mb-8">
-              Curated Collection
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-6 sm:mb-8 text-foreground leading-[1.1] tracking-tight">
-              Our <span className="font-semibold italic text-primary">Premium</span> Products
+        <div className="pt-28 sm:pt-36 pb-28">
+        <div className="container mx-auto px-5 sm:px-8 max-w-7xl">
+          {/* Ultra Clean Hero Section */}
+          <div className="text-center mb-16 sm:mb-24 animate-fade-in">
+            <p className="text-primary text-xs sm:text-sm font-medium tracking-[0.25em] uppercase mb-4">
+              Premium Collection
+            </p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-5 text-foreground leading-[1.15] tracking-tight">
+              Our Products
             </h1>
-            <div className="flex items-center justify-center gap-4 mb-6 sm:mb-8">
-              <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-            </div>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed font-light tracking-wide">
-              Finest products sourced from trusted suppliers worldwide
+            <p className="text-sm sm:text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
+              Quality ingredients sourced directly from trusted farms
             </p>
           </div>
 
-          {/* Elegant Product Categories Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          {/* Clean Product Categories Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {products.map((product, index) => {
               const Icon = product.icon;
               const previewImages = product.varieties.slice(0, 4).map((v: any) => v.image);
@@ -214,60 +202,48 @@ const Products = () => {
                 <div
                   key={product.title}
                   className="group animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ animationDelay: `${index * 0.08}s` }}
                 >
-                  <Card 
-                    className="relative overflow-hidden border-0 bg-card shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] transition-all duration-700 ease-out h-full flex flex-col group-hover:-translate-y-3"
-                  >
-                    {/* Single Featured Image */}
-                    <div className="relative h-64 sm:h-72 overflow-hidden">
+                  <div className="relative overflow-hidden rounded-xl bg-card border border-border/40 hover:border-border transition-all duration-500 h-full flex flex-col hover:shadow-lg">
+                    {/* Clean Image */}
+                    <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                       <img 
                         src={previewImages[0]} 
                         alt={product.title}
-                        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         loading="lazy"
                       />
-                      {/* Sophisticated overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      {/* Minimal overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                       
-                      {/* Floating variety count */}
-                      <div className="absolute top-5 right-5">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium bg-white/90 dark:bg-black/60 text-foreground backdrop-blur-md tracking-wide uppercase">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                          {product.varieties.length} Varieties
+                      {/* Variety badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-medium bg-white/95 dark:bg-black/70 text-foreground backdrop-blur-sm tracking-wide">
+                          {product.varieties.length} items
                         </span>
                       </div>
                       
-                      {/* Title overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                        <div className="flex items-end justify-between gap-4">
-                          <div>
-                            <div className="flex items-center gap-2 mb-2">
-                              <Icon className="w-4 h-4 text-white/70" />
-                              <span className="text-[10px] sm:text-xs text-white/70 uppercase tracking-widest font-medium">Category</span>
-                            </div>
-                            <h3 className="text-2xl sm:text-3xl font-light text-white tracking-tight">
-                              {product.title}
-                            </h3>
-                          </div>
-                        </div>
+                      {/* Title on image */}
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+                          {product.title}
+                        </h3>
                       </div>
                     </div>
                     
                     {/* Content */}
-                    <CardContent className="p-6 sm:p-8 flex flex-col flex-1 bg-gradient-to-b from-card to-muted/20">
-                      <p className="text-muted-foreground mb-6 leading-relaxed text-sm line-clamp-2 flex-1">
+                    <div className="p-5 flex flex-col flex-1">
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-5 flex-1">
                         {product.description}
                       </p>
                       
                       {/* Product thumbnails */}
-                      <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border/30">
-                        <div className="flex -space-x-3">
+                      <div className="flex items-center justify-between mb-5 pb-5 border-b border-border/50">
+                        <div className="flex -space-x-2">
                           {previewImages.slice(0, 4).map((img: string, i: number) => (
                             <div 
                               key={i}
-                              className="w-10 h-10 rounded-full border-[3px] border-card overflow-hidden shadow-sm transition-transform duration-300"
-                              style={{ transform: `translateX(${i * 2}px)` }}
+                              className="w-8 h-8 rounded-full border-2 border-card overflow-hidden"
                             >
                               <img src={img} alt="" className="w-full h-full object-cover" />
                             </div>
@@ -281,95 +257,90 @@ const Products = () => {
                       </div>
                       
                       {/* Action Buttons */}
-                      <div className="flex gap-3">
+                      <div className="flex gap-2">
                         <Button 
                           onClick={() => setSelectedProductTitle(product.title)}
-                          className="flex-1 bg-foreground hover:bg-foreground/90 text-background shadow-none transition-all duration-300 font-medium tracking-wide text-sm"
-                          size="lg"
+                          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground h-10 text-sm font-medium"
                         >
-                          Explore
+                          View All
                         </Button>
                         <Button 
                           onClick={() => setEnquiryProduct(product.title)}
-                          variant="ghost"
-                          className="flex-1 hover:bg-muted transition-all duration-300 font-medium tracking-wide text-sm"
-                          size="lg"
+                          variant="outline"
+                          className="flex-1 border-border hover:bg-muted h-10 text-sm font-medium"
                         >
                           Enquire
                         </Button>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
 
           <Dialog open={selectedProductTitle !== null} onOpenChange={(open) => !open && setSelectedProductTitle(null)}>
-            <DialogContent className="max-w-5xl max-h-[85vh] overflow-y-auto bg-background border-0 shadow-2xl">
+            <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto bg-background border border-border/50 shadow-xl rounded-xl">
               {(() => {
                 const current = products.find((p) => p.title === selectedProductTitle);
                 if (!current) return null;
                 const Icon = current.icon;
                 return (
                   <>
-                    <DialogHeader className="pb-8">
-                      <div className="text-center">
-                        <div className="inline-flex items-center gap-2 text-muted-foreground mb-4">
-                          <Icon className="w-4 h-4" />
-                          <span className="text-xs uppercase tracking-[0.2em] font-medium">Category</span>
+                    <DialogHeader className="pb-6 border-b border-border/50">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <DialogTitle className="text-xl sm:text-2xl font-semibold text-foreground">{current.title}</DialogTitle>
+                          <p className="text-sm text-muted-foreground mt-1">{current.varieties.length} varieties</p>
                         </div>
-                        <DialogTitle className="text-3xl sm:text-4xl font-light text-foreground tracking-tight">{current.title}</DialogTitle>
-                        <p className="text-sm text-muted-foreground mt-3">{current.varieties.length} premium varieties available</p>
-                        <div className="w-12 h-px bg-primary/40 mx-auto mt-6" />
                       </div>
                       <DialogDescription className="sr-only">
                         List of product varieties for {current.title}
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 pt-4">
                       {current.varieties.map((variety, vIndex) => {
                         const varietyName = typeof variety === 'string' ? variety : (variety as any).name;
                         const varietyImage = typeof variety === 'object' && (variety as any).image ? (variety as any).image : null;
                         return (
                           <div 
                             key={varietyName} 
-                            className="group"
+                            className="group rounded-lg border border-border/40 overflow-hidden hover:border-border hover:shadow-md transition-all duration-300"
                           >
-                            <div className="aspect-square bg-muted/20 rounded-lg overflow-hidden mb-3 relative">
+                            <div className="aspect-square bg-muted/30 overflow-hidden">
                               {varietyImage ? (
                                 <img 
                                   src={varietyImage} 
                                   alt={varietyName}
                                   loading="lazy"
-                                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
                               ) : (
                                 <div className="w-full h-full flex items-center justify-center">
-                                  <Icon className="w-12 h-12 text-muted-foreground/20" />
+                                  <Icon className="w-10 h-10 text-muted-foreground/20" />
                                 </div>
                               )}
                             </div>
-                            <div className="text-center">
-                              <p className="font-medium text-sm leading-tight mb-1 text-foreground">
+                            <div className="p-3">
+                              <p className="font-medium text-sm leading-tight mb-1 text-foreground line-clamp-1">
                                 {varietyName}
                               </p>
                               {current.title === "Rice" && (
-                                <p className="text-[10px] text-muted-foreground mb-3 tracking-wide">
+                                <p className="text-[10px] text-muted-foreground mb-2">
                                   10 LB · 20 LB · 40 LB
                                 </p>
                               )}
                               {current.title === "Pulses and Dals" && (
-                                <p className="text-[10px] text-muted-foreground mb-3 tracking-wide">
+                                <p className="text-[10px] text-muted-foreground mb-2">
                                   2 LB · 4 LB · 40 LB
                                 </p>
                               )}
                               {(current.title === "Spices" || current.title === "Blended Spices" || current.title === "Grounded Spices") && (
-                                <p className="text-[10px] text-muted-foreground mb-3 tracking-wide">
+                                <p className="text-[10px] text-muted-foreground mb-2">
                                   100g · 200g · 1 LB
                                 </p>
                               )}
-                              <div className="flex gap-2">
+                              <div className="flex gap-1.5">
                                 <Button 
                                   onClick={(e) => {
                                     e.stopPropagation();
@@ -390,10 +361,10 @@ const Products = () => {
                                     setAddToCartDialogOpen(true);
                                   }}
                                   size="sm"
-                                  variant="ghost"
-                                  className="flex-1 text-xs hover:bg-muted"
+                                  variant="outline"
+                                  className="flex-1 text-[11px] h-8 border-border"
                                 >
-                                  <ShoppingCart className="h-3.5 w-3.5 mr-1" />
+                                  <ShoppingCart className="h-3 w-3 mr-1" />
                                   Add
                                 </Button>
                                 <Button 
@@ -402,7 +373,7 @@ const Products = () => {
                                     setEnquiryProduct(varietyName);
                                   }}
                                   size="sm"
-                                  className="flex-1 text-xs bg-foreground text-background hover:bg-foreground/90"
+                                  className="flex-1 text-[11px] h-8 bg-primary hover:bg-primary/90"
                                 >
                                   Enquire
                                 </Button>
@@ -419,38 +390,32 @@ const Products = () => {
           </Dialog>
 
           <Dialog open={enquiryProduct !== null} onOpenChange={(open) => !open && setEnquiryProduct(null)}>
-            <DialogContent className="max-w-md bg-background border-0 shadow-2xl">
-              <DialogHeader className="pb-6 text-center">
-                <div className="inline-flex items-center justify-center gap-2 text-muted-foreground mb-3">
-                  <Mail className="w-4 h-4" />
-                  <span className="text-xs uppercase tracking-[0.2em] font-medium">Contact Us</span>
-                </div>
-                <DialogTitle className="text-2xl font-light text-foreground tracking-tight">Get in Touch</DialogTitle>
-                <DialogDescription className="text-sm text-muted-foreground mt-2">
-                  Enquiry about: <span className="font-medium text-foreground">{enquiryProduct}</span>
+            <DialogContent className="max-w-sm bg-background border border-border/50 shadow-xl rounded-xl">
+              <DialogHeader className="pb-4">
+                <DialogTitle className="text-lg font-semibold text-foreground">Contact Us</DialogTitle>
+                <DialogDescription className="text-sm text-muted-foreground">
+                  Enquiry: <span className="text-foreground">{enquiryProduct}</span>
                 </DialogDescription>
-                <div className="w-8 h-px bg-primary/40 mx-auto mt-4" />
               </DialogHeader>
               
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-muted/20 transition-colors hover:bg-muted/30">
-                  <Mail className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 p-3 rounded-lg border border-border/50 hover:bg-muted/30 transition-colors">
+                  <Mail className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Email</p>
                     <p className="text-sm text-foreground break-all">{contactInfo.email}</p>
                   </div>
-                  <div className="flex gap-2 flex-shrink-0">
+                  <div className="flex gap-1.5 flex-shrink-0">
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="h-8 w-8 p-0"
+                      className="h-7 w-7 p-0"
                       onClick={() => copyToClipboard(contactInfo.email)}
                     >
-                      <Copy className="w-3.5 h-3.5" />
+                      <Copy className="w-3 h-3" />
                     </Button>
                     <Button
                       size="sm"
-                      className="h-8 bg-foreground text-background hover:bg-foreground/90 text-xs"
+                      className="h-7 bg-primary hover:bg-primary/90 text-xs px-2"
                       onClick={sendEmail}
                     >
                       Send
@@ -458,24 +423,23 @@ const Products = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-muted/20 transition-colors hover:bg-muted/30">
-                  <Phone className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                <div className="flex items-center gap-3 p-3 rounded-lg border border-border/50 hover:bg-muted/30 transition-colors">
+                  <Phone className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Phone</p>
                     <p className="text-sm text-foreground">{contactInfo.phone}</p>
                   </div>
-                  <div className="flex gap-2 flex-shrink-0">
+                  <div className="flex gap-1.5 flex-shrink-0">
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="h-8 w-8 p-0"
+                      className="h-7 w-7 p-0"
                       onClick={() => copyToClipboard(contactInfo.phone)}
                     >
-                      <Copy className="w-3.5 h-3.5" />
+                      <Copy className="w-3 h-3" />
                     </Button>
                     <Button
                       size="sm"
-                      className="h-8 bg-emerald-600 hover:bg-emerald-700 text-white text-xs"
+                      className="h-7 bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-2"
                       onClick={openWhatsApp}
                     >
                       WhatsApp
@@ -483,33 +447,24 @@ const Products = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-4 rounded-lg bg-muted/20 transition-colors hover:bg-muted/30">
-                  <MapPin className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                <div className="flex items-center gap-3 p-3 rounded-lg border border-border/50 hover:bg-muted/30 transition-colors">
+                  <MapPin className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">Address</p>
-                    <p className="text-sm text-foreground leading-relaxed">{contactInfo.address}</p>
+                    <p className="text-xs text-foreground leading-relaxed">{contactInfo.address}</p>
                   </div>
                   <Button
                     size="sm"
                     variant="ghost"
                     onClick={() => copyToClipboard(contactInfo.address)}
-                    className="flex-shrink-0 h-8 w-8 p-0"
+                    className="flex-shrink-0 h-7 w-7 p-0"
                   >
-                    <Copy className="w-3.5 h-3.5" />
+                    <Copy className="w-3 h-3" />
                   </Button>
                 </div>
 
-                <p className="text-xs text-muted-foreground text-center pt-4 tracking-wide">
-                  We typically respond within 24 hours
+                <p className="text-[11px] text-muted-foreground text-center pt-2">
+                  We respond within 24 hours
                 </p>
-
-                <Button
-                  onClick={() => setEnquiryProduct(null)}
-                  variant="ghost"
-                  className="w-full hover:bg-muted text-muted-foreground"
-                >
-                  Close
-                </Button>
               </div>
             </DialogContent>
           </Dialog>
