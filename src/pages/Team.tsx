@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Users, Building2, Warehouse, Truck, Award, Target, MapPin, Phone, Mail } from "lucide-react";
 import teamImage from "@/assets/team-image.jpg";
 import madhavaImage from "@/assets/madhava-enhanced.jpg";
+import msReddyImage from "@/assets/ms-reddy.jpg";
 
 const Team = () => {
   const teamMembers = [
@@ -20,7 +21,7 @@ const Team = () => {
       description: "Over 20 years of experience in export management and expert in supply chain and quality control process",
       phones: ["+91 9052932845"],
       email: "khagroexporters@gmail.com",
-      image: null
+      image: msReddyImage
     }
   ];
 
