@@ -52,10 +52,10 @@ const About = () => {
             
             <div className="relative bg-card/90 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-16 border-2 border-primary/20 shadow-2xl">
               <div className="inline-block px-4 sm:px-6 py-2 bg-gradient-to-r from-primary/20 to-accent/20 text-primary rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-8 border border-primary/30">
-                WELCOME TO SRI NANDI
+                WELCOME TO SREE NANDI
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent leading-tight">
-                About Sri Nandi
+                About Sree Nandi
               </h1>
               <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4 sm:mb-8 rounded-full" />
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground font-medium max-w-3xl mx-auto leading-relaxed px-2">
@@ -83,7 +83,7 @@ const About = () => {
                   A Legacy of <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Quality & Trust</span>
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg text-foreground/90 leading-relaxed mb-4 sm:mb-8">
-                  Sri Nandi is a trusted and emerging brand committed to delivering high-quality, authentic products rooted in traditional values and purity. Founded with a passion for excellence and a vision to bring premium, natural products to every household.
+                  Sree Nandi is a trusted and emerging brand committed to delivering high-quality, authentic products rooted in traditional values and purity. Founded with a passion for excellence and a vision to bring premium, natural products to every household.
                 </p>
                 
                 <div className="relative border-l-4 border-primary pl-4 sm:pl-8 my-6 sm:my-10 bg-gradient-to-r from-primary/10 to-transparent py-4 sm:py-6 rounded-r-xl">
@@ -92,7 +92,7 @@ const About = () => {
                     Our Philosophy
                   </h3>
                   <p className="text-sm sm:text-base md:text-lg text-foreground/90 leading-relaxed italic">
-                    Sri Nandi is more than just a brand—it's a commitment to health, heritage, and honesty. Every product is crafted with devotion and undergoes strict quality checks to ensure our customers receive only the best.
+                    Sree Nandi is more than just a brand—it's a commitment to health, heritage, and honesty. Every product is crafted with devotion and undergoes strict quality checks to ensure our customers receive only the best.
                   </p>
                 </div>
               </div>
