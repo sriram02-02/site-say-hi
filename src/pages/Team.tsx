@@ -76,7 +76,7 @@ const Team = () => {
                 <div className="inline-block px-4 sm:px-6 py-2 bg-gradient-to-r from-primary/20 to-accent/20 text-primary rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-8 border border-primary/30">
                   OUR TEAM & INFRASTRUCTURE
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent leading-tight pb-2">
                   The People Behind <br className="hidden sm:block" /><span className="sm:hidden"> </span>KH Agro Excellence
                 </h1>
                 <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4 sm:mb-8 rounded-full" />
