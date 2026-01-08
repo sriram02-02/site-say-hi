@@ -13,7 +13,7 @@ export const Hero = () => {
         animate={{ scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <div className="absolute inset-0 bg-primary/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-accent/70"></div>
       </motion.div>
       
       {/* Floating particles */}
