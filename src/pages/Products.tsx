@@ -260,14 +260,14 @@ const Products = () => {
                       <div className="flex gap-3">
                         <Button 
                           onClick={() => setSelectedProductTitle(product.title)}
-                          className="flex-1 bg-gradient-to-r from-primary to-primary/85 hover:from-primary/95 hover:to-primary/80 text-primary-foreground h-11 text-sm font-semibold rounded-lg shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+                          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground h-11 text-sm font-bold rounded-lg shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:-translate-y-0.5 border-0"
                         >
                           View All
                         </Button>
                         <Button 
                           onClick={() => setEnquiryProduct(product.title)}
                           variant="outline"
-                          className="flex-1 border-2 border-primary/20 hover:border-primary/40 bg-transparent hover:bg-primary/5 text-foreground h-11 text-sm font-semibold rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+                          className="flex-1 border-2 border-primary hover:bg-primary hover:text-primary-foreground text-primary h-11 text-sm font-bold rounded-lg transition-all duration-300 hover:-translate-y-0.5"
                         >
                           Enquire
                         </Button>
