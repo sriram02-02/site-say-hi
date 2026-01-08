@@ -137,7 +137,7 @@ const Blog = () => {
                   <BookOpen className="w-4 h-4 inline mr-2" />
                   INSIGHTS & UPDATES
                 </div>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent leading-tight">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-accent bg-clip-text text-transparent leading-tight pb-2">
                   Blog & News
                 </h1>
                 <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6 rounded-full" />
