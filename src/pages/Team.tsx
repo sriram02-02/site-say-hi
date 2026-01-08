@@ -51,7 +51,8 @@ const Team = () => {
     { year: "2021", title: "ISO Certified", description: "Obtained ISO certification for quality management" },
     { year: "2021", title: "Global Expansion", description: "Expanded exports to Canada market" },
     { year: "2022", title: "FSSAI Certified", description: "Achieved food safety certification" },
-    { year: "2024", title: "US Exports with FDA", description: "Completed FDA process and started exports to USA" }
+    { year: "2024", title: "US Exports with FDA", description: "Completed FDA process and started exports to USA" },
+    { year: "2025", title: "Attending Gulf Food", description: "Showcasing vast range of products to the world food industry" }
   ];
 
   return (
