@@ -8,101 +8,101 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Warm cream/off-white background */
-    --background: 40 30% 98%;
-    --foreground: 25 40% 20%;
+    /* Clean white background */
+    --background: 0 0% 100%;
+    --foreground: 20 25% 15%;
 
-    /* Cards with subtle warmth */
-    --card: 40 25% 99%;
-    --card-foreground: 25 40% 20%;
+    /* Pure white cards */
+    --card: 0 0% 100%;
+    --card-foreground: 20 25% 15%;
 
-    --popover: 40 25% 99%;
-    --popover-foreground: 25 40% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 25% 15%;
 
-    /* Rich golden amber - inspired by wheat/sunrise */
-    --primary: 38 75% 45%;
-    --primary-foreground: 40 30% 98%;
+    /* Rich deep amber/gold - elegant and warm */
+    --primary: 32 85% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Warm neutral secondary */
-    --secondary: 35 20% 92%;
-    --secondary-foreground: 25 40% 20%;
+    /* Light neutral gray */
+    --secondary: 30 10% 95%;
+    --secondary-foreground: 20 25% 15%;
 
-    /* Subtle warm muted tones */
-    --muted: 35 15% 94%;
-    --muted-foreground: 25 20% 45%;
+    /* Subtle warm gray muted */
+    --muted: 30 8% 96%;
+    --muted-foreground: 20 10% 45%;
 
-    /* Rich chocolate brown accent - from banner */
-    --accent: 25 60% 35%;
-    --accent-foreground: 40 30% 98%;
+    /* Deep chocolate brown - sophisticated accent */
+    --accent: 20 65% 28%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Deep red for destructive - from chillies */
-    --destructive: 0 70% 45%;
-    --destructive-foreground: 40 30% 98%;
+    /* Rich red for destructive */
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Warm borders */
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 38 75% 45%;
+    /* Clean borders */
+    --border: 30 10% 88%;
+    --input: 30 10% 88%;
+    --ring: 32 85% 42%;
 
     --radius: 0.5rem;
 
-    /* Sidebar with warm tones */
-    --sidebar-background: 40 20% 97%;
-    --sidebar-foreground: 25 40% 20%;
-    --sidebar-primary: 38 75% 45%;
-    --sidebar-primary-foreground: 40 30% 98%;
-    --sidebar-accent: 35 20% 92%;
-    --sidebar-accent-foreground: 25 40% 20%;
-    --sidebar-border: 35 15% 88%;
-    --sidebar-ring: 38 75% 45%;
+    /* Clean sidebar */
+    --sidebar-background: 30 5% 98%;
+    --sidebar-foreground: 20 25% 15%;
+    --sidebar-primary: 32 85% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 10% 95%;
+    --sidebar-accent-foreground: 20 25% 15%;
+    --sidebar-border: 30 8% 90%;
+    --sidebar-ring: 32 85% 42%;
   }
 
   .dark {
-    /* Deep warm brown background */
-    --background: 25 35% 12%;
-    --foreground: 40 20% 92%;
+    /* Deep charcoal brown background */
+    --background: 20 20% 10%;
+    --foreground: 30 15% 92%;
 
-    /* Dark cards with brown undertones */
-    --card: 25 30% 16%;
-    --card-foreground: 40 20% 92%;
+    /* Dark cards */
+    --card: 20 18% 14%;
+    --card-foreground: 30 15% 92%;
 
-    --popover: 25 30% 16%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 20 18% 14%;
+    --popover-foreground: 30 15% 92%;
 
-    /* Golden amber stays vibrant in dark mode */
-    --primary: 40 80% 50%;
-    --primary-foreground: 25 35% 12%;
+    /* Vibrant gold in dark mode */
+    --primary: 38 90% 50%;
+    --primary-foreground: 20 20% 10%;
 
-    /* Muted warm secondary */
-    --secondary: 25 25% 22%;
-    --secondary-foreground: 40 20% 92%;
+    /* Dark secondary */
+    --secondary: 20 15% 20%;
+    --secondary-foreground: 30 15% 92%;
 
-    /* Dark muted tones */
-    --muted: 25 25% 22%;
-    --muted-foreground: 35 15% 55%;
+    /* Dark muted */
+    --muted: 20 15% 20%;
+    --muted-foreground: 30 10% 55%;
 
     /* Warm brown accent */
-    --accent: 30 55% 40%;
-    --accent-foreground: 40 20% 95%;
+    --accent: 28 60% 40%;
+    --accent-foreground: 30 15% 95%;
 
-    /* Muted red for dark mode */
-    --destructive: 0 55% 40%;
-    --destructive-foreground: 40 20% 92%;
+    /* Muted red */
+    --destructive: 0 60% 42%;
+    --destructive-foreground: 30 15% 92%;
 
-    /* Dark warm borders */
-    --border: 25 20% 25%;
-    --input: 25 20% 25%;
-    --ring: 40 80% 50%;
+    /* Dark borders */
+    --border: 20 15% 22%;
+    --input: 20 15% 22%;
+    --ring: 38 90% 50%;
 
     /* Dark sidebar */
-    --sidebar-background: 25 35% 10%;
-    --sidebar-foreground: 40 20% 92%;
-    --sidebar-primary: 40 80% 50%;
-    --sidebar-primary-foreground: 25 35% 12%;
-    --sidebar-accent: 25 25% 18%;
-    --sidebar-accent-foreground: 40 20% 92%;
-    --sidebar-border: 25 20% 20%;
-    --sidebar-ring: 40 80% 50%;
+    --sidebar-background: 20 20% 8%;
+    --sidebar-foreground: 30 15% 92%;
+    --sidebar-primary: 38 90% 50%;
+    --sidebar-primary-foreground: 20 20% 10%;
+    --sidebar-accent: 20 15% 16%;
+    --sidebar-accent-foreground: 30 15% 92%;
+    --sidebar-border: 20 15% 18%;
+    --sidebar-ring: 38 90% 50%;
   }
 }
 
