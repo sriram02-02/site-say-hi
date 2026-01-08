@@ -177,23 +177,29 @@ const Products = () => {
       {/* Content */}
       <div className="relative">
         <Navigation />
-        <div className="pt-28 sm:pt-36 pb-28">
-        <div className="container mx-auto px-5 sm:px-8 max-w-7xl">
-          {/* Ultra Clean Hero Section */}
-          <div className="text-center mb-16 sm:mb-24 animate-fade-in">
-            <p className="text-primary text-xs sm:text-sm font-medium tracking-[0.25em] uppercase mb-4">
-              Premium Collection
-            </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-5 text-foreground leading-[1.15] tracking-tight">
-              Our Products
+        <div className="pt-32 sm:pt-40 pb-32">
+        <div className="container mx-auto px-6 sm:px-10 max-w-7xl">
+          {/* Elegant Hero Section */}
+          <div className="text-center mb-20 sm:mb-28 animate-fade-in">
+            <div className="inline-block mb-6">
+              <div className="flex items-center gap-3">
+                <div className="h-px w-8 bg-primary/60" />
+                <p className="text-primary text-xs font-medium tracking-[0.3em] uppercase">
+                  Premium Collection
+                </p>
+                <div className="h-px w-8 bg-primary/60" />
+              </div>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light mb-6 text-foreground leading-[1.1] tracking-tight">
+              Our <span className="font-medium italic">Products</span>
             </h1>
-            <p className="text-sm sm:text-base text-muted-foreground max-w-md mx-auto leading-relaxed">
-              Quality ingredients sourced directly from trusted farms
+            <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto leading-relaxed font-light">
+              Exquisite ingredients, meticulously sourced from the world's finest farms
             </p>
           </div>
 
-          {/* Clean Product Categories Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          {/* Elegant Product Categories Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {products.map((product, index) => {
               const Icon = product.icon;
               const previewImages = product.varieties.slice(0, 4).map((v: any) => v.image);
@@ -202,72 +208,72 @@ const Products = () => {
                 <div
                   key={product.title}
                   className="group animate-fade-in"
-                  style={{ animationDelay: `${index * 0.08}s` }}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="relative overflow-hidden rounded-xl bg-card border border-border/40 hover:border-border transition-all duration-500 h-full flex flex-col hover:shadow-lg">
-                    {/* Clean Image */}
+                  <div className="relative overflow-hidden bg-card border border-border/30 hover:border-primary/20 transition-all duration-700 h-full flex flex-col hover:shadow-2xl hover:shadow-primary/5">
+                    {/* Sophisticated Image */}
                     <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                       <img 
                         src={previewImages[0]} 
                         alt={product.title}
-                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110 group-hover:brightness-105"
                         loading="lazy"
                       />
-                      {/* Minimal overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      {/* Elegant gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       
-                      {/* Variety badge */}
-                      <div className="absolute top-4 right-4">
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-md text-[10px] font-medium bg-white/95 dark:bg-black/70 text-foreground backdrop-blur-sm tracking-wide">
-                          {product.varieties.length} items
+                      {/* Refined variety badge */}
+                      <div className="absolute top-5 right-5">
+                        <span className="inline-flex items-center px-3 py-1.5 text-[10px] font-medium tracking-widest uppercase bg-white/90 dark:bg-black/80 text-foreground backdrop-blur-md border border-white/20">
+                          {product.varieties.length} Varieties
                         </span>
                       </div>
                       
-                      {/* Title on image */}
-                      <div className="absolute bottom-0 left-0 right-0 p-5">
-                        <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
+                      {/* Title on image with elegant typography */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h3 className="text-2xl sm:text-3xl font-light text-white tracking-wide">
                           {product.title}
                         </h3>
                       </div>
                     </div>
                     
                     {/* Content */}
-                    <div className="p-5 flex flex-col flex-1">
-                      <p className="text-muted-foreground text-sm leading-relaxed mb-5 flex-1">
+                    <div className="p-6 flex flex-col flex-1">
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1 font-light">
                         {product.description}
                       </p>
                       
-                      {/* Product thumbnails */}
-                      <div className="flex items-center justify-between mb-5 pb-5 border-b border-border/50">
-                        <div className="flex -space-x-2">
+                      {/* Elegant product thumbnails */}
+                      <div className="flex items-center justify-between mb-6 pb-6 border-b border-border/30">
+                        <div className="flex -space-x-3">
                           {previewImages.slice(0, 4).map((img: string, i: number) => (
                             <div 
                               key={i}
-                              className="w-8 h-8 rounded-full border-2 border-card overflow-hidden"
+                              className="w-10 h-10 rounded-full border-2 border-card overflow-hidden shadow-md"
                             >
                               <img src={img} alt="" className="w-full h-full object-cover" />
                             </div>
                           ))}
                         </div>
                         {product.varieties.length > 4 && (
-                          <span className="text-xs text-muted-foreground">
+                          <span className="text-xs text-muted-foreground font-light tracking-wide">
                             +{product.varieties.length - 4} more
                           </span>
                         )}
                       </div>
                       
-                      {/* Action Buttons */}
+                      {/* Classy Action Buttons */}
                       <div className="flex gap-3">
                         <Button 
                           onClick={() => setSelectedProductTitle(product.title)}
-                          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-sm font-medium tracking-wide uppercase rounded-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/35 transition-all duration-300 hover:-translate-y-0.5"
+                          className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-xs font-medium tracking-[0.15em] uppercase shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5"
                         >
                           View All
                         </Button>
                         <Button 
                           onClick={() => setEnquiryProduct(product.title)}
                           variant="outline"
-                          className="flex-1 border border-foreground/80 hover:bg-foreground hover:text-background text-foreground h-12 text-sm font-medium tracking-wide uppercase rounded-sm transition-all duration-300 hover:-translate-y-0.5"
+                          className="flex-1 border border-foreground/70 hover:bg-foreground hover:text-background text-foreground h-12 text-xs font-medium tracking-[0.15em] uppercase transition-all duration-300 hover:-translate-y-0.5"
                         >
                           Enquire
                         </Button>
@@ -280,40 +286,41 @@ const Products = () => {
           </div>
 
           <Dialog open={selectedProductTitle !== null} onOpenChange={(open) => !open && setSelectedProductTitle(null)}>
-            <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto bg-background border border-border/50 shadow-xl rounded-xl">
+            <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-background border border-border/30 shadow-2xl">
               {(() => {
                 const current = products.find((p) => p.title === selectedProductTitle);
                 if (!current) return null;
                 const Icon = current.icon;
                 return (
                   <>
-                    <DialogHeader className="pb-6 border-b border-border/50">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <DialogTitle className="text-xl sm:text-2xl font-semibold text-foreground">{current.title}</DialogTitle>
-                          <p className="text-sm text-muted-foreground mt-1">{current.varieties.length} varieties</p>
-                        </div>
+                    <DialogHeader className="pb-8 border-b border-border/30">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="h-px w-6 bg-primary/60" />
+                        <span className="text-primary text-[10px] font-medium tracking-[0.3em] uppercase">
+                          {current.varieties.length} Varieties
+                        </span>
                       </div>
+                      <DialogTitle className="text-2xl sm:text-3xl font-light text-foreground tracking-wide">{current.title}</DialogTitle>
                       <DialogDescription className="sr-only">
                         List of product varieties for {current.title}
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 pt-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 pt-6">
                       {current.varieties.map((variety, vIndex) => {
                         const varietyName = typeof variety === 'string' ? variety : (variety as any).name;
                         const varietyImage = typeof variety === 'object' && (variety as any).image ? (variety as any).image : null;
                         return (
                           <div 
                             key={varietyName} 
-                            className="group rounded-lg border border-border/40 overflow-hidden hover:border-border hover:shadow-md transition-all duration-300"
+                            className="group overflow-hidden border border-border/30 hover:border-primary/20 hover:shadow-xl transition-all duration-500"
                           >
-                            <div className="aspect-square bg-muted/30 overflow-hidden">
+                            <div className="aspect-square bg-muted/20 overflow-hidden">
                               {varietyImage ? (
                                 <img 
                                   src={varietyImage} 
                                   alt={varietyName}
                                   loading="lazy"
-                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                                 />
                               ) : (
                                 <div className="w-full h-full flex items-center justify-center">
@@ -321,26 +328,26 @@ const Products = () => {
                                 </div>
                               )}
                             </div>
-                            <div className="p-3">
-                              <p className="font-medium text-sm leading-tight mb-1 text-foreground line-clamp-1">
+                            <div className="p-4">
+                              <p className="font-medium text-sm leading-tight mb-1.5 text-foreground line-clamp-1 tracking-wide">
                                 {varietyName}
                               </p>
                               {current.title === "Rice" && (
-                                <p className="text-[10px] text-muted-foreground mb-2">
+                                <p className="text-[10px] text-muted-foreground mb-3 tracking-wider">
                                   10 LB · 20 LB · 40 LB
                                 </p>
                               )}
                               {current.title === "Pulses and Dals" && (
-                                <p className="text-[10px] text-muted-foreground mb-2">
+                                <p className="text-[10px] text-muted-foreground mb-3 tracking-wider">
                                   2 LB · 4 LB · 40 LB
                                 </p>
                               )}
                               {(current.title === "Spices" || current.title === "Blended Spices" || current.title === "Grounded Spices") && (
-                                <p className="text-[10px] text-muted-foreground mb-2">
+                                <p className="text-[10px] text-muted-foreground mb-3 tracking-wider">
                                   100g · 200g · 1 LB
                                 </p>
                               )}
-                              <div className="flex gap-1.5">
+                              <div className="flex gap-2">
                                 <Button 
                                   onClick={(e) => {
                                     e.stopPropagation();
@@ -362,7 +369,7 @@ const Products = () => {
                                   }}
                                   size="sm"
                                   variant="outline"
-                                  className="flex-1 text-[11px] h-8 border-border"
+                                  className="flex-1 text-[10px] h-9 border-foreground/50 hover:bg-foreground hover:text-background tracking-widest uppercase transition-all duration-300"
                                 >
                                   <ShoppingCart className="h-3 w-3 mr-1" />
                                   Add
@@ -373,7 +380,7 @@ const Products = () => {
                                     setEnquiryProduct(varietyName);
                                   }}
                                   size="sm"
-                                  className="flex-1 text-[11px] h-8 bg-primary hover:bg-primary/90"
+                                  className="flex-1 text-[10px] h-9 bg-primary hover:bg-primary/90 tracking-widest uppercase shadow-md shadow-primary/20 transition-all duration-300"
                                 >
                                   Enquire
                                 </Button>
