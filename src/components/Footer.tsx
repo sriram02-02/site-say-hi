@@ -25,7 +25,7 @@ export const Footer = () => {
                 <Facebook size={18} />
               </a>
               <a 
-                href="https://x.com/khagroexports" 
+                href="https://x.com/Khagrofoods" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors" 
