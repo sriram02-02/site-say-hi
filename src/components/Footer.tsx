@@ -16,7 +16,7 @@ export const Footer = () => {
             </p>
             <div className="flex gap-4 justify-center sm:justify-start">
               <a 
-                href="https://www.facebook.com/khagroexports" 
+                href="https://www.facebook.com/profile.php?id=61586798253044" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors" 
