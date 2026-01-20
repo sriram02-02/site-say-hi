@@ -32,7 +32,9 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 const Contact = () => {
   const contactInfo = {
     email: "khagrofoods@gmail.com",
+    email2: "khagroexporters@gmail.com",
     phone: "+91 9948547000",
+    phone2: "+91 9848938837",
     address: "Flat No. 304, Krisals County, Syamala Nagar, Guntur - 522006, Andhra Pradesh, India"
   };
 
@@ -188,11 +190,12 @@ Please contact me for further details.`;
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Email</p>
                       <p className="text-xs sm:text-sm text-muted-foreground break-all">{contactInfo.email}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground break-all">{contactInfo.email2}</p>
                     </div>
                     <Button
                       size="sm"
                       variant="outline"
-                      onClick={() => copyToClipboard(contactInfo.email)}
+                      onClick={() => copyToClipboard(`${contactInfo.email}, ${contactInfo.email2}`)}
                       className="flex-shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3 p-0"
                     >
                       <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -206,11 +209,12 @@ Please contact me for further details.`;
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Phone</p>
                       <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.phone}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.phone2}</p>
                     </div>
                     <Button
                       size="sm"
                       variant="outline"
-                      onClick={() => copyToClipboard(contactInfo.phone)}
+                      onClick={() => copyToClipboard(`${contactInfo.phone}, ${contactInfo.phone2}`)}
                       className="flex-shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3 p-0"
                     >
                       <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
