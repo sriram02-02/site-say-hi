@@ -188,18 +188,30 @@ Please contact me for further details.`;
                       <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Email</p>
-                      <p className="text-xs sm:text-sm text-muted-foreground break-all">{contactInfo.email}</p>
-                      <p className="text-xs sm:text-sm text-muted-foreground break-all">{contactInfo.email2}</p>
+                      <p className="font-semibold text-foreground mb-2 text-sm sm:text-base">Email</p>
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <p className="text-xs sm:text-sm text-muted-foreground break-all">{contactInfo.email}</p>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => copyToClipboard(contactInfo.email)}
+                          className="flex-shrink-0 h-7 w-7 p-0"
+                        >
+                          <Copy className="w-3 h-3" />
+                        </Button>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-xs sm:text-sm text-muted-foreground break-all">{contactInfo.email2}</p>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => copyToClipboard(contactInfo.email2)}
+                          className="flex-shrink-0 h-7 w-7 p-0"
+                        >
+                          <Copy className="w-3 h-3" />
+                        </Button>
+                      </div>
                     </div>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => copyToClipboard(`${contactInfo.email}, ${contactInfo.email2}`)}
-                      className="flex-shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3 p-0"
-                    >
-                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
-                    </Button>
                   </div>
 
                   <div className="flex items-start gap-3 sm:gap-4">
@@ -207,18 +219,30 @@ Please contact me for further details.`;
                       <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-foreground mb-1 text-sm sm:text-base">Phone</p>
-                      <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.phone}</p>
-                      <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.phone2}</p>
+                      <p className="font-semibold text-foreground mb-2 text-sm sm:text-base">Phone</p>
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.phone}</p>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => copyToClipboard(contactInfo.phone)}
+                          className="flex-shrink-0 h-7 w-7 p-0"
+                        >
+                          <Copy className="w-3 h-3" />
+                        </Button>
+                      </div>
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-xs sm:text-sm text-muted-foreground">{contactInfo.phone2}</p>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => copyToClipboard(contactInfo.phone2)}
+                          className="flex-shrink-0 h-7 w-7 p-0"
+                        >
+                          <Copy className="w-3 h-3" />
+                        </Button>
+                      </div>
                     </div>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => copyToClipboard(`${contactInfo.phone}, ${contactInfo.phone2}`)}
-                      className="flex-shrink-0 h-8 w-8 sm:h-9 sm:w-auto sm:px-3 p-0"
-                    >
-                      <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
-                    </Button>
                   </div>
 
                   <div className="flex items-start gap-3 sm:gap-4">
