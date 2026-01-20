@@ -45,7 +45,7 @@ export const Footer = () => {
                 <Linkedin size={18} />
               </a>
               <a 
-                href="https://www.instagram.com/khagrofoods/" 
+                href="https://www.instagram.com/khagrofoods?igsh=MXdrMjdiOG5lc2Izdw==" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors" 
